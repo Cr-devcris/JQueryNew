@@ -6,21 +6,22 @@ $(document).ready(function(){
     $('#botao-cancelar').click(function(){
         $('form').slideUp();
     })
-})
 
-    $('form').on('submit', function(e){
+    $('form').on('submit', function(e) {
         e.preventDeFault();
-        const enderecoDaNovaImagem = $('#endNovaImg').val();
-        const novoItem = $('<li></li>');
-        console.log(enderecoDaNovaImagem);
-        $(`<img src="${enderecoDaNovaImagem}" />`).appendTo(novoItem);
+        const enderecoNovaImagem = $('#end-nova-img').val();
+        const novoItem = $('<li style="display: none"></li>');
+        $(`<img src="${enderecoNovaImagem}" />`).appendTo(novoItem);
         $(`
             <div class="overlay-imagem-link">
-                <a href="${enderecoDaNovaImagem}" target="_blank" title="ver imagem em tamanho real">
+                <a href="${enderecoNovaImagem}" target="_blank" title="ver imagem em tamanho real">
             ver imagem em tamanho real
-                </a>
             </div>
+
         `).appendTo(novoItem);
         $(novoItem).appendTo('ul');
-        $('#endNovaImg').val('')
+        $(novoItem).fadeIn();
+        $('#end-nova-img').val('');
     })
+})
+
