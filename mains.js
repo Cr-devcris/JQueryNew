@@ -22,6 +22,7 @@ $(document).ready(function(){
         $(novoItem).appendTo('ul');
         $(novoItem).fadeIn();
         $('#end-nova-img').val('');
+        $(document)
     })
 })
 
